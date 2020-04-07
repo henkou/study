@@ -4,3 +4,12 @@
       cout.fill() : 출력 자릿수를 맞추고 빈 자리를 무엇으로 채울건지 ex) cout.fill('0');
 1022. getline(cin, 저장할 변수) : 입력인자, 입력받은 문자열을 저장할 객체, 제한자로 이 문자에 도달 시 추출 중단
 1028. unsigned int : 정수의 범위가 더 넓어진다.
+1029. cout << fixed; cout.precision(11); : fixed는 소수점 고정, precision은 소수점 밑으로 11자리까지 출력.
+1030. long long int
+1031. std::cout<<"8진수: "<< std::oct <<input<<"\n";
+      std::cout<<"10진수: "<< std::dec <<input<<"\n";
+      std::cout<<"16진수: "<< std::hex <<input<<"\n";
+1033. std::cout << std::showbase << std::hex;
+      std::cout << std::uppercase << 77 << '\n'; // 대소문자.
+      std::cout << std::nouppercase << 77 << '\n';
+
