@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main(){
+  char a, b;
+  cin >> a;
+  b = a + 1;
+  cout << b << endl;
+}
+
+int main(){
+  char a;
+  int b;
+  cin >> a;
+  b = a + 1;
+  a = (char)b;
+  cout << a << endl;
+}
