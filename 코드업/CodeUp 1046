@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    long long int a, b, c, sum;
+    double av;
+    cin >> a >> b >> c;
+    sum = a + b + c;
+    cout << sum << endl;
+    av = (double)sum / 3;
+    cout << fixed;
+    cout.precision(1);
+    cout << av << endl; 
+}
+
