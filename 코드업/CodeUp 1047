@@ -1,0 +1,9 @@
+#include<iostream>
+using namespace std;    
+int main(){
+    int a;
+    cin >> a;
+    cout << (a<<1) << endl;
+}
+
+>> << 이 기호를 통해서 2배 4배 또는 나누기를 할 수 있다.
