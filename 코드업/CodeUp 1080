@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int a, b, sum;
+    cin >> a;
+    sum = 0;
+    b = 0;
+    do{
+        b++;
+        sum += b;
+    }while(sum < a);
+    
+    cout << b << endl;
+}
