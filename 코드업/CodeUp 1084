@@ -1,0 +1,39 @@
+//c++ 로는 for문이 시간초과가 되서 ㅠㅠ 못했다.
+// 단일 포문으로 바꾸고 조건이 안에 들어가는 식으로 만들었을 때도 같은 결과가 나왔다. 
+#include <stdio.h>
+int main()
+{
+    int i, a, b, c, j, k, cnt = 0;
+    scanf("%d%d%d", &a, &b, &c);
+    for(i=0; i<a; i++)
+    {
+        for(j=0; j<b; j++)
+        {
+            for(k=0; k<c; k++)
+            {
+                printf("%d %d %d\n", i, j, k);
+                cnt++;
+            }
+        }
+    }
+    printf("%d", cnt);
+    return 0;
+  
+}
+
+#include<iostream>
+using namespace std;
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c;
+    d = 0;
+    for (int i = 0; i < a; i++) {
+        for (int j = 0; j < b; j++) {
+            for (int k = 0; k < c; k++) {
+                cout << i << " " << j << " " << k << endl;
+                d++;
+            }
+        }
+    }
+    cout << d << endl;
+}
