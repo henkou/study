@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int a, r, n;
+	cin >> a >> r >> n;
+	long long sum = a;
+	for (int i = 2; i <= n; i++) {
+		sum *= r;
+	}
+	cout << sum << endl;
+}
