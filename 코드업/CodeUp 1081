@@ -32,3 +32,15 @@ for(i=1; i<=n; i++)
 
 반복 실행구조를 사용할 때에는
 반복횟수를 기록해 두기 위해 i, j와 같은 변수를 선언해 사용해야 한다.
+
+#include<iostream>
+using namespace std;
+int main(){
+    int a, b;
+    cin >> a >> b;
+    for(int i = 1; i <= a; i++){
+        for(int j = 1; j <= b; j++){
+            cout << i << " " << j << endl;
+        }
+    }
+}
