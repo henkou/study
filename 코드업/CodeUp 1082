@@ -1,0 +1,11 @@
+// hex 와 uppercase 를 통해 대문자 16진수를 출력한다.
+
+#include<iostream>
+using namespace std;
+int main() {
+    int a;
+    cin >> hex >> a;
+    for (int i = 1; i <= 16; i++) {
+        cout << hex << uppercase << a << "*" << i << "=" << a * i << endl;
+    }
+}
