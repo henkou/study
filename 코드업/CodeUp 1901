@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main() {
+	long long int a, m, d, n;
+	long long int sum = 0;
+	cin >> a >> m >> d >> n;
+	for (int i = 1; i <=n; i++) {
+		if (i == 1) {
+			sum = a;
+			continue;
+		}
+		sum = sum * m + d;
+	}
+	cout << sum << endl;
+}
