@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int h, w, n, l, d, x, y;
+	int arr[100][100] = { };
+	cin >> h >> w; // 격자판 
+	cin >> n; // 막대의 개수
+
+	for (int i = 0; i < n; i++) {
+		cin >> l >> d >> x >> y; // 길이, 세로,가로, 좌표 x, y
+		if (d == 1) {
+			for (int j = x; j < x+l; j++) {
+				arr[j][y] = 1;
+			}
+		}
+		else {
+			for (int k = y; k < y+l; k++) {
+				arr[x][k] = 1;
+			}
+		}
+	}
+
+	for (int i = 1; i <= h; i++) {
+		for (int j = 1; j <= w; j++) {
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+}
