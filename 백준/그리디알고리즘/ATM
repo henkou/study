@@ -16,7 +16,7 @@ int main() {
 	}
 	cout << endl;
 	cout << endl;
-	sort(arr, arr + (n+1)); // sort 정렬 시켜주는 함수
+	sort(arr, arr + (n+1)); // sort 정렬 시켜주는 함수 arr은 begin, arr+n은 end 이다.
 	for (int i = 1; i <= n; i++) {
 		cout << arr[i] << " ";
 	}
