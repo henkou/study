@@ -1,0 +1,25 @@
+#include<iostream>
+#include<algorithm>
+#include<functional>
+using namespace std;
+int rope[1000001];
+int main() {
+	int n, w, k; // 로프 개수, 각 로프가 들어올릴 수 있는 중량, 몇개사용하는지의 k
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> rope[i];
+	}
+	sort(rope, rope + n, greater<int>()); 
+	int result = 0;
+	for (int i = 0; i < n; i++) {
+		long long int sum = rope[i] * (i + 1);
+		if (sum > result) {
+			result = sum;
+		}
+	}
+	cout << result << endl;
+	return 0;
+
+}
+
+// 그리디 알고리즘은 정렬을 많이 사용한다. 
