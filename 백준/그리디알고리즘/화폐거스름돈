@@ -1,0 +1,28 @@
+// 처음 작성한 코드.. 완전.. 초보..
+
+#include<iostream>
+using namespace std;
+int main() {
+	int money, n;
+	n = 1000;
+	cin >> money;
+	int cnt;
+	int a;
+	
+	while (n - money > 0) {
+		a = n - money;
+		cnt = a / 500;
+		a = a % 500;
+		cnt += a / 100;
+		a = a % 100;
+		cnt += a / 50;
+		a = a % 50;
+		cnt += a / 10;
+		a = a % 10;
+		cnt += a / 5;
+		a = a % 5;
+		cnt += a / 1;
+		break;
+	}
+	cout << cnt << endl;
+}
