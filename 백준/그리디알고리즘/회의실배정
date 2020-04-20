@@ -1,0 +1,51 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+
+struct str {
+	int start;
+	int end;
+	str(int start, int end) :start(start), end(end) { };
+
+};
+
+bool operator<(str s1, str s2) {
+	if (s1.end != s2.end) {
+		return s1.end > s2.end;
+	}
+	else {
+		return s1.start > s2.start;
+	}
+}
+
+int main() {
+		int n;
+		cin >> n;
+
+		int start, end;
+		priority_queue<str> pq;
+
+		for (int i = 0; i < n; i++) {
+			cin >> start >> end;
+			pq.push(str(start, end));
+		}
+
+		int ans = 0;
+		end = -1;
+
+		while (!pq.empty()) {
+			str s = pq.top();
+			pq.pop();
+
+			if (s.start >= end) {
+				ans++;
+				end = s.end;
+			}
+		}
+
+		cout << ans << endl;
+		return 0;
+	
+}
+// 코드는 적어놓았지만 vector로 start, end를 입력받고 출력하는 것에 있어서 아직 이해를 못했다.
+// vector의 형번환하는방법,
