@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int N, M, K;
+	cin >> N >> M >> K;
+	// 중요한 건 인턴 참가할 K명을 여자or남자에서 뺄지 조건식 만들어야 함
+	for (int i = 0; i < K; i++) {
+		if (N / 2 < M) {
+			M--;
+		}
+		else {
+			N--;
+		}
+		
+	}
+	cout << (N / 2 <= M ? N / 2 : M) << endl;
+
+}
