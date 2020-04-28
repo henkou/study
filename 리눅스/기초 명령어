@@ -1,0 +1,9 @@
+아이콘과 같은 것들을 이용해서 컴퓨터를 제어 - GUI방식
+명령어로 제어 - CLI(command line interface)방식
+pwd : 현재 머물고 있는 위치 확인 
+mkdir hello_linux : directory 생성 
+touch empty_file.txt : file 생성
+ls, ls -l, ls -al 등 넣을 수 있는 파라미터가 많이 있다.
+help(화면을 나가지고 않고 간단한 명령어), man(전용페이지로 이동 상세한 내용) 
+rm filename : file을 삭제
+rmdir directory : direcotory를 삭제
