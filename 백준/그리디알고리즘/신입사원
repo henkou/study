@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+const int MAX = 100000;
+pair<int, int> employee[MAX];
+
+int main() {
+	int t; // 횟수
+	int n; // 지원자
+	int res = 1;
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		cin >> n;
+		for (int j = 0; j < n; j++) {
+			cin >> employee[j].first >> employee[i].second;
+		}
+		sort(employee, employee + n);
+		int interView = employee[0].second;
+
+		for (int i = 1; i < n; i++) {
+			if (employee[i].second < interView) {
+				res++;
+				interView = employee[i].second;
+			}
+		}
+		cout << res << endl;
+	}
+}
