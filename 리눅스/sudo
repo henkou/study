@@ -1,0 +1,6 @@
+super user do permisiion super user root user
+rm -rf / 묻지도 따지지도 않고 모든 파일 삭제
+opt-get install git / sudo opt-get install git
+특징 : 다중 사용자 시스템
+다중 사용자 시스템이기 때문에 권한을 통해 제한을 해두었음
+그렇기 때문에 sudo를 이용한 권한 명령어도 있다.
