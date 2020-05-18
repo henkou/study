@@ -1,0 +1,28 @@
+package Ex;
+
+import java.util.Scanner;
+
+// 삽입 정렬
+public class Ex1443 {
+
+	public static void main(String[] args) {
+		int a[] = new int[10001];
+		int n, temp, key;
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		for(int i = 0; i < n; i++) {
+			a[i] = sc.nextInt();
+		}
+		for(int i = 1; i < n; i++) { 	
+			key = a[i];
+			for(int j = i - 1; j >= 0 && a[j] > key; j--) {
+				a[j+1]=a[j];
+				a[j] = key;
+			}
+			
+		}
+		for(int i = 0; i < n; i++) {
+			System.out.println(a[i]);
+		}
+	}
+}
