@@ -1,0 +1,52 @@
+import java.util.*;
+class Solution {
+    public int[] solution(int[] answers) {
+        
+        int a[] = {1,2,3,4,5};
+        int b[] = {2,1,2,3,2,4,2,5};
+        int c[] = {3,3,1,1,2,2,4,4,5,5};
+        int count[] = new int[3];
+       
+        for(int i = 0; i < answers.length; i++){
+            if(answers[i] == a[i]){
+                count[0]++;
+            }
+            if(answers[i] == b[i]){
+                count[1]++;
+            }
+            if(answers[i] == c[i]){
+                count[2]++;
+            }
+        }
+        int max = count[0];
+        for(int i = 1; i < count.length; i++){
+            if(max < count[i]){
+                max = count[i];
+            }
+        }
+        List<Integer> win = new ArrayList<>(); //<-- 참고
+        for(int i = 0; i < count.length; i++){
+            if(max == count[i]){
+                win.add(i+1);    
+            }
+        }
+        int[] answer = new int[win.size()];
+        for(int i = 0; i < win.size(); i++){ //win.size() <-- 참고) 
+            answer[i] = win.get(i);
+        }
+        return answer;
+    }
+}
+
+완전탐색이란
+	'모든 경우의 수를 전부 찾아서 답을 찾는 알고리즘' 을 뜻한다. 영어로는 Exhaustive Search 라고 한다. 가능한 모든 경우의 수를 다 해보는 것이다. 알고리즘을 풀때 가장 강력하고 확실한 방법이지만 그만큼 시간이 가장 오래 걸리는 탐색 기법이다
+다른 말로는 '무식한 힘'이라는 뜻을 가진 brute force algorithm이라고 불린다. 자원만 충족해준다면 항상 100%의 정확도가 보장된다는 점에서 가장 확실한 방법이다. 암호학에서는 비슷한 개념으로 brute force attack이 있다.
+ex) 0000 ~ 9999로 이루어진 임의의 비밀번호를 찾고 싶을때, 가능한 모든 조합은 1만개 (10^4) 이다. 가장 확실한 방법은 0000부터 9999까지 가능한 모든 비밀번호의 수를 대입해보는 것이다. 컴퓨터의 성능이 크게 개선된 오늘날에는 1초안에 위 방법으로 비밀번호를 찾을 수 있다.
+완전탐색 기법의 종류
+	• Brute Force : for문과 if문을 이용하여 처음부터 끝까지 탐색하는 방법
+	• 비트 마스크 : 이진수 표현을 자료구조로 쓰는 기법 (AND, OR, XOR, SHIFT, NOT)
+	• 재귀 함수
+	• 순열 : 서로 다른 n개의 원소에서 r개의 중복을 허용하지 않고 순서대로 늘어 놓은 수
+	• BFS(너비우선탐색), DFS(깊이우선탐색)
+백트래킹
+
