@@ -70,3 +70,8 @@ class Solution {
     }
 }
 
+다른사람풀이, 몰랐던 것 
+copyOfRange 
+
+Arrays.copyOfRange(arrays, commands[i][0]-1, commands[i][1];
+                             start                end
