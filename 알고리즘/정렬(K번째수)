@@ -1,4 +1,4 @@
-첫 번째 
+첫 번째 - 원하는 식으로 구현 못했음
 import java.util.*;
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
@@ -18,6 +18,29 @@ class Solution {
         // a 는 몇번째를 가지고 오는지를 담는 변수
         int a = commands[][2];
         answer = update[a];
+        return answer;
+    }
+}
+
+
+두번째 - 시간초과
+import java.util.*;
+class Solution {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = {};
+        int[] arr = new int [commands.length];
+        for(int i = 0; i < commands.length; i++){
+            int c = commands[i][0];
+            int b = commands[i][1];
+            int a = b - c;
+            for(int j = 0; j <= a; i++){
+                arr[j] = array[c + j];
+            }
+            
+            Arrays.sort(arr);
+            int d = commands[i][2];
+            answer[i] = arr[d];
+        }
         return answer;
     }
 }
