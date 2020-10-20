@@ -29,10 +29,13 @@ class Solution {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = {};
         int[] arr = new int [commands.length];
+        // 여기 for 에서 시간이 초과 되는 것 같다. 줄일 수 있는 방법은?
         for(int i = 0; i < commands.length; i++){
             int c = commands[i][0];
             int b = commands[i][1];
             int a = b - c;
+            // 여기서 for문을 한 이유는?
+            // arr에 array 배열을 집어 넣기 위해서 근데 왜 밑에꺼랑 시간ㅇㅣ 다르게 나오지?
             for(int j = 0; j <= a; i++){
                 arr[j] = array[c + j];
             }
@@ -44,3 +47,26 @@ class Solution {
         return answer;
     }
 }
+
+세번째 - 참고해서 품
+import java.util.*;
+class Solution {
+    public int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+        for(int i = 0; i < commands.length; i++){
+            int start = commands[i][0];
+            int end = commands[i][1];
+            int length = end - start;
+            int a = 0;
+            int arr[] = new int[length + 1]; 
+            for(int j = start - 1; j < end; j++){ // -1 해주는 이유는 배열은 0부터 시작이니까
+                arr[a++] = array[j];
+            }
+            Arrays.sort(arr);
+            int d = commands[i][2];
+            answer[i] = arr[d-1]; // d도 마찬가지로 배열은 0부터 시작 
+        }
+        return answer;
+    }
+}
+
