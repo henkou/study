@@ -1,0 +1,27 @@
+class Solution {
+    public String solution(int[] numbers) {
+        String answer = "";
+        String[] arr = {};
+        String max = "";
+        for(int i = 0; i < numbers.length; i++){
+            arr = Integer.toString(numbers[i]);
+        }
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr.length; j++){
+                if(arr[i].compareTo(arr[j+1] > 0)){
+                    max = arr[i];
+                    max = arr[i];
+                }else if(arr[i].compareTo(arr[j+1] < 0)){
+                    max = arr[j+1];
+                }
+            }
+        }
+        
+        return answer;
+    }
+}
+// 문제 파악은 완료. 코딩으로 표현하는데 어려움을 겪고 있음
+// 1. 과정
+// numbers 에서 int => string 으로 변환 후 새로운 String 배열에 입력,
+// 그 다음 과정인 큰 수를 고르는 것이 어렵. 이 과정에서 compareTo라는 것을 참고했는데 어떻게 사용할지 아직 감이 안잡힘.
+// 그리고 answer 에 입력.
