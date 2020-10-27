@@ -1,3 +1,4 @@
+1. 
 class Solution {
     public String solution(int[] numbers) {
         String answer = "";
@@ -25,3 +26,71 @@ class Solution {
 // numbers 에서 int => string 으로 변환 후 새로운 String 배열에 입력,
 // 그 다음 과정인 큰 수를 고르는 것이 어렵. 이 과정에서 compareTo라는 것을 참고했는데 어떻게 사용할지 아직 감이 안잡힘.
 // 그리고 answer 에 입력.
+
+2.
+import java.util.*;
+
+class Solution {
+    public String solution(int[] numbers) {
+        int answer = 0;
+        String[] arr = new String[numbers.length];
+        String[] arr1 = new String[arr.length];
+        // String 변환
+        for(int i = 0; i < numbers.length; i++){
+            arr[i] = Integer.toString(numbers[i]);
+        };
+        // 정렬
+        for(int i = 0; i < arr.length; i++){
+            String max = arr[i];
+            for(int j = 0; j < arr.length; j++){
+                if(max.compareTo(arr[j+1]) < 1){
+                    String tt = arr[j+1];
+                    arr[j+1] = max;
+                    max = tt;
+                }
+            }
+            // 배열에 저장했으니 {1, 12, 123} 이런 형태.
+            arr1[i] = max;
+        }
+        // 다시 for문을 통해 정렬을 해야하나?
+        // 밑의 것으로 수정함 
+        answer = Integer.parseInt(arr1);
+       
+        
+        return answer;
+    }
+}
+
+3. 
+import java.util.*;
+
+class Solution {
+    public String solution(int[] numbers) {
+        String answer = "";
+        String[] arr = new String[numbers.length];
+        String[] arr1 = new String[arr.length];
+        // String 변환
+        for(int i = 0; i < numbers.length; i++){
+            arr[i] = Integer.toString(numbers[i]);
+        };
+        // 정렬
+        for(int i = 0; i < arr.length; i++){
+            String max = arr[i];
+            for(int j = 0; j < arr.length-1; j++){
+                if(max.compareTo(arr[j+1]) < 1){
+                    String tt = arr[j+1];
+                    arr[j+1] = max;
+                    max = tt;
+                }
+            }
+            arr1[i] = max;
+        }
+        for(int i = 0; i < arr1.length; i++){
+            answer += arr1[i];  // String 이니 += 를 해도 덧셈이 되는 것이 아니라 연결이 됨. 그리고 나서 형 변환을 해주면 됨
+        }
+        Integer.parseInt(answer);
+       
+        
+        return answer; // But {3, 30, 34, 5, 9} 일 때 오류 발생 330 303 의 차이를 못 알아봄 따라서 *4를 해줘야 함. 4자리 수까지 이니까 
+    }
+}
