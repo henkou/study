@@ -94,3 +94,48 @@ class Solution {
         return answer; // But {3, 30, 34, 5, 9} 일 때 오류 발생 330 303 의 차이를 못 알아봄 따라서 *4를 해줘야 함. 4자리 수까지 이니까 
     }
 }
+
+4.
+import java.util.*;
+
+class Solution {
+    public String solution(int[] numbers) {
+        String answer = "";
+        String[] arr = new String[numbers.length];
+        String[] arr1 = new String[arr.length];
+        // String 변환
+        for(int i = 0; i < numbers.length; i++){
+            arr[i] = Integer.toString(numbers[i]);
+        };
+        // 정렬 전에 *4
+        
+        // 정렬
+        for(int i = 0; i < arr.length; i++){
+            String max = arr[i];
+            for(int j = 0; j < arr.length -1; j++){
+                if(compare(max, arr[j+1]) < 1){
+                    String tt = arr[j+1];
+                    arr[j+1] = max;
+                    max = tt;
+                }
+                arr1[i] = max;
+            }
+        }
+        // answer = "6102" 이렇게 표현됨
+        for(int i = 0; i < arr1.length; i++){
+            answer += arr1[i];
+        }
+        // String => int 
+        Integer.parseInt(answer);
+       
+        
+        return answer;
+    }
+    // 정렬하기 전 *4 를 하기 대신에 303 , 330 으로 비교해 값을 비교
+    // 이 부분은 참고 
+    public int compare(String a, String b){
+        return (a+b).compareTo(b+a);
+    }
+}
+// But 테스트는 했지만 나머지는 런타임애러, 시간초과
+// 원인: for 문이 많다.
