@@ -122,9 +122,9 @@ class Solution {
             }
         }
         // answer = "6102" 이렇게 표현됨
-        for(int i = 0; i < arr1.length; i++){
-            answer += arr1[i];
-        }
+        for(int i = 0; i < arr1.length; i++){                     for(String a : arr1){
+            answer += arr1[i];                                      answer += a;                      
+        }                                                         }
         // String => int 
         Integer.parseInt(answer);
        
