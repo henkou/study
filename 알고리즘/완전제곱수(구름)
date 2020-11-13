@@ -1,0 +1,28 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		int count = Integer.parseInt(input); // 입력이 String => Int로 변환
+		int arr[] = new int[count]; 
+		int countNum = 0;
+		for(int i = 0; i < count; i++){
+			input = br.readLine();
+			arr[i] = Integer.parseInt(input);
+		}
+		for(int i = 0; i < arr.length; i++){
+    // 제곱근을 구하는 방법
+    // 입력받은 숫자의 나누기 2를 했고 그 안에서만 두번 곱했을 경우 입력받은 숫자가 나오면 그 숫자가 제곱근이됨.
+			int half = arr[i] / 2;
+			if(arr[i] == 1) {
+				countNum++;
+			}
+			for(int j = 1; j <= half; j++){
+				if(arr[i] == j * j){
+					countNum++;
+				}
+			}
+		}
+		System.out.println(countNum);
+	}
+}
