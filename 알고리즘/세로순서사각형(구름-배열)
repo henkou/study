@@ -1,3 +1,4 @@
+1.
 import java.io.*;
 class Main {
 	public static void main(String[] args) throws Exception {
@@ -20,5 +21,63 @@ class Main {
 			}
 			System.out.println();
 		}
+	}
+}
+
+2. 결과: 성공 더 생각해 볼 문제: 마지막 두번의 for문을 없애고 첫번째 두개의 for문에서 출력까지 가능한가?
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		int num = Integer.parseInt(input);
+		int arr[][] = new int[num][num];
+    // 와 여기서 막히네.......
+		int line = 1;
+		for(int i = 0; i < num; i++){
+			arr[i][0] = line;
+			line = line + 1;
+			for(int j = 1; j < num; j++){
+				arr[i][j] = arr[i][j-1] + num;
+			}
+		}
+		
+		for(int i = 0; i < num; i++){
+			for(int j = 0; j < num; j++){
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+3.
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		int num = Integer.parseInt(input);
+		int arr[][] = new int[num][num];
+		int line = 1;
+		
+		// 첫 번째 for문에서 출력
+		for(int i = 0; i < num; i++){
+			arr[i][0] = line;
+			line += 1;
+			System.out.print(arr[i][0] + " ");
+			for(int j = 1; j < num; j++){
+				arr[i][j] = arr[i][j-1] + num;
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		// 여기를 없애고
+		// for(int i = 0; i < num; i++){
+		// 	for(int j = 0; j < num; j++){
+		// 		System.out.print(arr[i][j] + " ");
+		// 	}
+		// 	System.out.println();
+		// }
 	}
 }
