@@ -1,3 +1,4 @@
+1. 결과: 실패, 원인: 모르겟음, 
 import java.io.*;
 import java.util.*;
 class Main {
@@ -24,4 +25,37 @@ class Main {
     
   }
 }
-// 제출결과: 오류 원인: 모르겠음;
+
+2. 결과: , 원인: , 생각해 볼 문제: 절대값을 이용해서 풀었는데 2-1 = 1 인 반면, 1-2 = -1 =>절대값 1
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in);
+		String input = br.readLine();
+		int num = Integer.parseInt(input);
+		int arr[] = new int[num];
+		
+		String array[] = new String[num];
+		
+		for(int i = 0; i < num; i++){
+			array[i] = sc.next();
+      arr[i] = Integer.parseInt(array[i]);
+		}
+    
+		// for(int i = 0; i < num; i++){
+		//	arr[i] = Integer.parseInt(array[i]);
+		// }
+    // 절대값 Math.abs(int, double 등등)
+		int min = Math.abs(arr[1] - arr[0]);
+		for(int i = 1; i < num - 1; i++){
+			for(int j = i + 1; j < num; j++){
+				if(Math.abs(arr[j] - arr[i]) < min){
+					min = Math.abs(arr[j] - arr[i]);
+				}
+			}
+		}
+		System.out.println(min);
+	}
+}
