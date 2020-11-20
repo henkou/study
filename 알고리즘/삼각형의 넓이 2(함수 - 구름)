@@ -1,0 +1,25 @@
+1 결과: 통과하지 못한 케이스 있다. 설마 마지막에 반올림이 걸리는건가?
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in);
+		String array[] = new String[3];
+		int arr[] = new int[3];
+		double s = 0.00d;
+		double plus = 0;
+		for(int i = 0; i < 3; i++){
+			array[i] = sc.next(); 
+			arr[i] = Integer.parseInt(array[i]);
+			plus += arr[i];  // 여기 double
+		}
+		s = plus / 2;
+		double ss = 0.00d;
+		ss = Math.sqrt((s*(s - arr[0])*(s - arr[1])*(s - arr[2])));
+		System.out.print(Math.round(ss*100)/100.0);
+	}
+}
+// Math.sqrt -> 제곱근 
+// Math.round -> 소수점 자리수 반올림 // Math.floor -> 자리수 제거 
+// f는 실수 %.2 2번째 자리까지  
