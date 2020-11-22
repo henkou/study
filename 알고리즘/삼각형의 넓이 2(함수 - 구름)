@@ -17,7 +17,8 @@ class Main {
 		s = plus / 2;
 		double ss = 0.00d;
 		ss = Math.sqrt((s*(s - arr[0])*(s - arr[1])*(s - arr[2])));
-		System.out.print(Math.round(ss*100)/100.0);
+		// System.out.print(Math.round(ss*100)/100.0);
+		System.out.prinlf("%.2f", ss);
 	}
 }
 // Math.sqrt -> 제곱근 
