@@ -30,3 +30,35 @@ class Main {
 		// (원금 인트 * 이자율 더블 ) = (원금 * 이자율 ) = (원금 * 이자율)
 	}
 }
+
+2. 결과: 통과, 원인: 이자율의 계산이 틀렸었음
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		String array[] = new String[3];
+		double arr[] = new double[3];
+		double rate = 1;
+		// 입력 받기
+		// 입력 받은 후 바로 형변환해서 넣어 주려고 했는데 Int는 가능, Double은 불가능
+		for(int i = 0; i < 3; i++){
+			array[i] = sc.next();
+			// 입력 받은 후 Double 형변환
+			arr[i] = Double.parseDouble(array[i]);
+		}
+		Double num = arr[0];
+		// 이자율 계산
+		for(int i = 0; i < arr[2]; i++){
+			// 이자값만
+			// 이자값만 계산하는게 잘못됐나봄..
+			// rate = rate * (arr[1] * 0.01);
+			//  곱하는 것 뿐만아니라 + 가 있어야지.;;
+			rate = num * arr[1] * 0.01;
+			num += rate;
+		}
+		System.out.printf("%.2f", num);
+		// 이자율 복리 계산
+		// (원금 인트 * 이자율 더블 ) = (원금 * 이자율 ) = (원금 * 이자율)
+	}
+}
