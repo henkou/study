@@ -27,3 +27,33 @@ class Main {
 		System.out.print(sum);
 	}
 }
+2. 결과: 통과 원인: while 조건문의 실패
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		String array[] = new String[2];
+		int num[] = new int[2];
+		int rest_coupon = 0;
+		int plus_coupon = 0;
+		for(int i = 0; i < 2; i++){
+			array[i] = sc.next();
+			num[i] = Integer.parseInt(array[i]);
+		}
+		int sum = num[0];
+		// 입력은 됐는데 계산이 실패
+		// 20 % 7 = 6 > 7 => 말같지도 않은 조건식이었음...
+		// 간단한 조건식이었는데 통과해버림..
+		while(num[0] > 0){
+			plus_coupon = num[0] / num[1];
+			sum += plus_coupon;
+			rest_coupon = num[0] % num[1];
+			num[0] = plus_coupon + rest_coupon;
+			if(num[0] < num[1]){
+				System.out.print(sum);
+				break;
+			}
+		}
+	}
+}
