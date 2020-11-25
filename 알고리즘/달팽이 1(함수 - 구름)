@@ -1,0 +1,32 @@
+1. 결과: 테스트 통과 못한 케이스 원인: ?
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// int sc = br.readLine();
+		Scanner sc = new Scanner(System.in);
+		String array[] = new String[4];
+		Double arr[] = new Double[4];
+		for(int i = 0; i < 4; i++){
+			array[i] = sc.next();
+			arr[i] = Double.parseDouble(array[i]);
+		}
+		Double h = 0.0;
+		int day = 0;
+		Double tired = arr[3] * 0.01;
+		Double up = arr[1];
+		while(arr[0] > 0){
+			if(arr[0] < h){
+				System.out.print("Success" + " "+ day);
+				break;
+			}else if(arr[0] > h){
+				day++;
+				h = h + up - arr[2];
+				up = up - tired;
+			}else if(h < 0){
+				System.out.print("Failure" + " " + day);
+			}
+		}
+	}
+}
