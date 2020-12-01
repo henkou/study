@@ -1,0 +1,33 @@
+1. 자바-결과: 오답, 원인: 모르겠음, 실행결과는 제대로 나오는 것 확인
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int input = Integer.parseInt(br.readLine());
+		Scanner sc = new Scanner(System.in);
+		int arr[] = new int[input];
+		String array[] = new String[input];
+		//
+		for(int i = 0; i < input; i++){
+			array[i] = sc.next();
+			arr[i] = Integer.parseInt(array[i]);
+		}
+		// 버블정렬
+		int stay = 0;
+		for(int i = 0; i < input -1; i++){
+			for(int j = i+1; j < input; j++){
+				if(arr[i] > arr[j]){
+				stay = arr[i];
+				arr[i] = arr[j];
+				arr[j] = stay;
+			}
+		}
+		// 출력
+		}
+		for(int i = 0; i < input; i++){
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
+
