@@ -31,3 +31,14 @@ class Main {
 	}
 }
 
+2. 파이썬 결과: 오류, 원인: 모르겟음;
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+num = input();
+arr = input();
+for i in range(0, len(num)-1):
+	for j in range(i,len(num-i)):
+		if arr[j] > arr[j+1]:
+			arr[j], arr[j+1] = arr[j+1], arr[j]
+
+print(arr)
