@@ -57,7 +57,7 @@ for i in input:
 		e += 1
 	else:
 		f += 1
-if a == i and b == f and c == d:
+if a == e and b == f and c == d:
 	print("True")
 else:
 	print("False")
