@@ -38,3 +38,26 @@ class Main {
 		}
 	}
 }
+
+2. 파이썬 결과: 테스트못한케이스 원인: ?
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+input = input()
+a, b, c, d, e, f = 0, 0, 0, 0, 0, 0
+for i in input:
+	if i == "{":
+		a += 1
+	elif i == "[":
+		b += 1
+	elif i == "(":
+		c += 1
+	elif i == ")":
+		d += 1
+	elif i == "}":
+		e += 1
+	else:
+		f += 1
+if a == i and b == f and c == d:
+	print("True")
+else:
+	print("False")
