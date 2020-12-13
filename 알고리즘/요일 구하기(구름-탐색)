@@ -1,0 +1,20 @@
+1. 결과: 실패 원인: input 받는 것...
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+// 함수
+import datetime
+
+def day_find(a, b):
+	day = ['MON', 'THU', 'WED', 'THR', 'FRI', 'SAT', 'SUN'] 
+	d = datetime.date(2016, a, b).weekday()
+  // 이미 d에서 날짜가 13, 44 가 입력이 되면 계산을 못하고 error 발생 
+	if d < 0:
+		print('ERROR')
+	elif d > 6:
+		print('ERROR')
+	else:
+		print(day[d])
+// 받아서 함수에 넘겨주는 것
+input = input()
+print(input)
+day_find(input)
