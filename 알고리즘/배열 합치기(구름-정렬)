@@ -1,0 +1,11 @@
+1. 결과: 오답 원인: ?????
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+num1, num2 = map(int, input().split())
+list1 = list(map(int, input().split()))
+list2 = list(map(int, input().split()))
+list3 = list1 + list2
+list3.sort()
+# repr => str 이외 
+# list의 []와 ,를 없애기 위함
+print(' '.join(repr(e) for e in list3))
