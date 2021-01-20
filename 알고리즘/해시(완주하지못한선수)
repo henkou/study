@@ -38,3 +38,11 @@ class Solution {
 }
 
 테스트는 성공하였으나 정확성, 효율성 테스트에서 실패.
+
+-python code
+
+import collections
+def solution(participant, completion):
+	answer = collections.Counter(participant) - collections.Counter(competion)
+	return list(answer)[0]
+
